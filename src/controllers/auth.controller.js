@@ -37,13 +37,14 @@ export const register = async (req, res, next) => {
 
     res.json({
       message: "Registrado exitosamente",
-      access_token, // Agregado aquí
+
       user: {
         _id: newUser._id,
         name: newUser.name,
         email: newUser.email,
         picture: newUser.picture,
         status: newUser.status,
+        access_token,
       },
     });
   } catch (error) {
@@ -96,13 +97,14 @@ export const refreshToken = async (req, res, next) => {
 
     res.json({
       message: "Token de actualización exitoso",
-      access_token,
+      
       user: {
         _id: user._id,
         name: user.name,
         email: user.email,
         picture: user.picture,
         status: user.status,
+        access_token,
       },
     });
   } catch (error) {
